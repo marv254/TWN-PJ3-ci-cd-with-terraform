@@ -46,7 +46,7 @@ resource "aws_subnet" "myapp-subnet-1"{
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = [var.my_ip]
+    cidr_blocks      = [var.my_ip,var.jenkins_ip]
   }
 
   ingress {
