@@ -13,6 +13,7 @@ pipeline {
         maven 'maven-3.8.6'
     }
     environment {
+        BRANCH_NAME = "master"
         IMAGE_NAME = 'marv254/my-repo:java-maven-2.0'
     }
     stages {
@@ -46,15 +47,15 @@ pipeline {
                     dir ('terraform'){
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
-                    //     EC2_PUBLIC_IP = sh(                            
-                    //         script: "terraform output ec2_public_ip"                            
-                    //         returnStdout: true                         
-                    //     ).trim()
-                    // }
+                        EC2_PUBLIC_IP = sh(                            
+                            script: "terraform output ec2_public_ip",                             
+                            returnStdout: true                         
+                        ).trim()
+                    }
                 }
             }
         }
-        }
+        
         stage('deploy') {
             steps {
                 script {
