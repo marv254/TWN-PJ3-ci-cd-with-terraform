@@ -10,7 +10,7 @@ library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
 pipeline {
     agent any
     tools {
-        maven 'Maven'
+        maven 'maven-3.8.6'
     }
     environment {
         IMAGE_NAME = 'nanajanashia/demo-app:java-maven-2.0'
@@ -46,9 +46,9 @@ pipeline {
                     dir ('terraform'){
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
-                        EC2_PUBLIC_IP = sh (                            
+                        EC2_PUBLIC_IP = sh(                            
                             script: "terraform output ec2_public_ip"                            
-                            returnStdout: true                           
+                            returnStdout: true                         
                         ).trim()
                     }
                 }
