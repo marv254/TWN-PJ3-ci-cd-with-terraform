@@ -1,6 +1,4 @@
-**Demo Project:**
-
-Complete CI/CD with Terraform
+# Complete CI/CD with Terraform
 
 **Technologies used:**
 
