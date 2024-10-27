@@ -19,7 +19,7 @@ deploying an existing server
 
 - Adjusted Jenkinsfile to add “provision” step to the CI/CD pipeline that provisions EC2 instance
 
-So the complete CI/CD project we build has the following configuration:
+So the complete CI/CD project has the following configuration:
 
 * CI step: Build artifact for Java Maven application
 
